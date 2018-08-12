@@ -1,0 +1,11 @@
+<template>
+    <el-tree
+  :data="data2"
+  show-checkbox
+  default-expand-all
+  node-key="id"
+  ref="tree"
+  highlight-current
+  :props="defaultProps">
+</el-tree>
+</template>

@@ -1,8 +1,7 @@
 <template>
     <el-form ref="form"
              :model="form"
-             label-width="80px"
-             @submit.native.prevent="onFormSubmit">
+             label-width="80px">
         <el-form-item label="活动名称">
             <slot name='slot1'>
                 <el-input v-model="form.name"></el-input>
@@ -64,7 +63,7 @@
         </el-form-item>
         <el-form-item>
             <el-button type="primary"
-                       @click="onFormSubmit">立即创建</el-button>
+                       @click="onSubmit">立即创建</el-button>
             <el-button>取消</el-button>
         </el-form-item>
     </el-form>
@@ -87,7 +86,7 @@ export default {
         };
     },
     methods: {
-        onFormSubmit() {
+        onSubmit() {
             console.log('submit!');
         }
     }

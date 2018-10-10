@@ -41,10 +41,6 @@
                          to="/formRset">
                 formRset
             </router-link>
-            <router-link tag="span"
-                         to="/propsTest">
-                propsTest
-            </router-link>
 
         </div>
         <router-view></router-view>

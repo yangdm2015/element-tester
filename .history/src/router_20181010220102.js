@@ -22,42 +22,39 @@ import router from "./router.js"
 Vue.use(VueRouter);
 
 const routes = [{
-        path: "/table",
-        component: table
-    },
-    {
-        path: "/cascader",
-        component: cascaderWrapper
-    },
-    {
-        path: "/tree",
-        component: tree
-    }, {
-        path: "/rt",
-        component: rt
-    }, {
-        path: "/form",
-        component: formWrapper
-    }, {
-        path: "/po",
-        component: po
-    }, {
-        path: "/mx",
-        component: mx
-    }, {
-        path: "/lo",
-        component: lo
-    }, {
-        path: "/formRset",
-        component: formRset
-    }, {
-        path: "/propsTest",
-        component: propsTest
-    }, {
-        path: "/computedTest",
-        component: computedTest
-    }
-]
+    path: "/table",
+    component: table
+}, {
+    path: "/cascader",
+    component: cascaderWrapper
+}, {
+    path: "/tree",
+    component: tree
+}, {
+    path: "/rt",
+    component: rt
+}, {
+    path: "/form",
+    component: formWrapper
+}, {
+    path: "/po",
+    component: po
+}, {
+    path: "/mx",
+    component: mx
+}, {
+    path: "/lo",
+    component: lo
+}, {
+    path: "/formRset",
+    component: formRset
+}, {
+    path: "/propsTest",
+    component: propsTest
+}, {
+    path: "/computedTest",
+    component: computedTest
+}]
 
 
 var Router = new VueRouter({

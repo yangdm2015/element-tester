@@ -1,10 +1,9 @@
 <template>
     <div id="app">
         <el-container>
-            <el-header height="120px">
-                <img src="./assets/logo.png"
-                     class="logo">
-                vue element-ui 实例</el-header>
+            <el-header>
+                vue element-ui 实例
+            </el-header>
             <el-container>
                 <el-aside width="200px">
                     <el-radio-group v-model="isCollapse"
@@ -143,11 +142,6 @@ export default {
 </script>
 
 <style>
-.logo {
-    width: 100px;
-    height: 100px;
-    float: left;
-}
 #app {
     font-family: Helvetica, sans-serif;
     text-align: center;

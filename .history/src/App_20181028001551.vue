@@ -1,12 +1,10 @@
 <template>
     <div id="app">
-        <el-container>
-            <el-header height="120px">
-                <img src="./assets/logo.png"
-                     class="logo">
-                vue element-ui 实例</el-header>
-            <el-container>
-                <el-aside width="200px">
+        <img src="./assets/logo.png">
+
+        <el-row>
+            <el-col :span="6">
+                <div class="menu-wrap">
                     <el-radio-group v-model="isCollapse"
                                     style="margin-bottom: 20px;">
                         <el-radio-button :label="false">展开</el-radio-button>
@@ -49,18 +47,13 @@
                             <span slot="title">导航四</span>
                         </el-menu-item>
                     </el-menu>
-                </el-aside>
-                <el-container>
-                    <el-main>
+                </div>
 
-                        <router-view></router-view>
-
-                    </el-main>
-                    <el-footer>Footer</el-footer>
-                </el-container>
-            </el-container>
-        </el-container>
-
+            </el-col>
+            <el-col :span="18">
+                <router-view></router-view>
+            </el-col>
+        </el-row>
         <div>
             <el-button @click="startHacking">Start</el-button>
             <router-link tag="span"
@@ -143,11 +136,6 @@ export default {
 </script>
 
 <style>
-.logo {
-    width: 100px;
-    height: 100px;
-    float: left;
-}
 #app {
     font-family: Helvetica, sans-serif;
     text-align: center;

@@ -53,7 +53,7 @@ const routes = [{
         component: propsTest
     }, {
         path: "/keyTest",
-        component: keyTest
+        component: propsTest
     }
 
 

@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <el-container>
-            <el-header height="120px">
+            <el-header>
                 <img src="./assets/logo.png"
                      class="logo">
                 vue element-ui 实例</el-header>

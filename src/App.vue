@@ -4,7 +4,9 @@
             <el-header height="120px">
                 <img src="./assets/logo.png"
                      class="logo">
-                vue element-ui 实例</el-header>
+                <h1>
+                    vue element-ui 实例</h1>
+            </el-header>
             <el-container>
                 <el-aside width="200px">
                     <el-radio-group v-model="isCollapse"
@@ -17,7 +19,17 @@
                              @open="handleOpen"
                              @close="handleClose"
                              :collapse="isCollapse">
-                        <el-submenu index="1">
+                        <el-menu-item index="2">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">
+                                <router-link tag="span"
+                                             to="/keyTest">
+                                    keyTest
+                                </router-link>
+
+                            </span>
+                        </el-menu-item>
+                        <!-- <el-submenu index="1">
                             <template slot="title">
                                 <i class="el-icon-location"></i>
                                 <span slot="title">导航一</span>
@@ -47,7 +59,7 @@
                         <el-menu-item index="4">
                             <i class="el-icon-setting"></i>
                             <span slot="title">导航四</span>
-                        </el-menu-item>
+                        </el-menu-item> -->
                     </el-menu>
                 </el-aside>
                 <el-container>
@@ -56,12 +68,14 @@
                         <router-view></router-view>
 
                     </el-main>
-                    <el-footer>Footer</el-footer>
+                    <el-footer>
+                        copyRight: yangshan08
+                    </el-footer>
                 </el-container>
             </el-container>
         </el-container>
 
-        <div>
+        <div v-if="false">
             <el-button @click="startHacking">Start</el-button>
             <router-link tag="span"
                          to="/cascader">
@@ -119,7 +133,7 @@
 export default {
     data() {
         return {
-            isCollapse: true
+            isCollapse: false
         };
     },
     methods: {

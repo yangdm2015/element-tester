@@ -18,17 +18,42 @@
                              class="el-menu-vertical-demo"
                              @open="handleOpen"
                              @close="handleClose"
-                             :collapse="isCollapse">
-                        <el-menu-item index="2">
+                             :collapse="isCollapse"
+                             :router="true"
+                             :defaultActive="defaultActive"
+                             @select="goLink">
+
+                        <div v-for="(item,index) in $router.options.routes.filter(i=>i.name)"
+                             :key="item.path">
+
+                            <el-submenu :index="index"
+                                        v-if="item.children">
+                                <i class="el-icon-menu"></i>
+                                <el-menu-item v-for="child in item.children"
+                                              :key="child.path"
+                                              :index="child.path">{{child.name}}</el-menu-item>
+                            </el-submenu>
+                            <el-menu-item v-else
+                                          :index="item.path">
+                                <i class="el-icon-location"></i>{{item.name}}
+                            </el-menu-item>
+                        </div>
+                        <!-- <el-menu-item index="2">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">
+                                keyTest
+                               
+                            </span>
+                        </el-menu-item>
+                        <el-menu-item index="3">
                             <i class="el-icon-menu"></i>
                             <span slot="title">
                                 <router-link tag="span"
-                                             to="/keyTest">
-                                    keyTest
+                                             to="/vuexTest">
+                                    vuexTest
                                 </router-link>
-
                             </span>
-                        </el-menu-item>
+                        </el-menu-item> -->
                         <!-- <el-submenu index="1">
                             <template slot="title">
                                 <i class="el-icon-location"></i>
@@ -75,57 +100,6 @@
             </el-container>
         </el-container>
 
-        <div v-if="false">
-            <el-button @click="startHacking">Start</el-button>
-            <router-link tag="span"
-                         to="/cascader">
-                cascader
-            </router-link>
-            <router-link tag="span"
-                         to="/form">
-                form
-            </router-link>
-            <router-link tag="span"
-                         to="/tree">
-                tree
-            </router-link>
-
-            <router-link tag="span"
-                         to="/rt">
-                rt
-            </router-link>
-            <router-link tag="span"
-                         to="/po">
-                po
-            </router-link>
-            <router-link tag="span"
-                         to="/formvali">
-                formvali
-            </router-link>
-
-            <router-link tag="span"
-                         to="/mx">
-                mx
-            </router-link>
-            <router-link tag="span"
-                         to="/lo">
-                lo
-            </router-link>
-            <router-link tag="span"
-                         to="/formRset">
-                formRset
-            </router-link>
-            <router-link tag="span"
-                         to="/propsTest">
-                propsTest
-            </router-link>
-            <router-link tag="span"
-                         to="/keyTest">
-                keyTest
-            </router-link>
-
-        </div>
-
     </div>
 </template>
 
@@ -137,6 +111,9 @@ export default {
         };
     },
     methods: {
+        goLink(index, indexPath) {
+            // debugger;
+        },
         startHacking() {
             this.$notify({
                 title: 'It works!',
@@ -151,6 +128,11 @@ export default {
         },
         handleClose(key, keyPath) {
             console.log(key, keyPath);
+        }
+    },
+    computed: {
+        defaultActive() {
+            return this.$route.fullPath;
         }
     }
 };

@@ -6,6 +6,8 @@ import App from './App.vue'
 import router from "./router.js"
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
+import Vuex from 'vuex'
+import store from './store'
 // import hljs from 'highlight.js';
 // import 'highlight.js/styles/googlecode.css' //样式文件
 // Vue.directive('highlight', function (el) {
@@ -14,11 +16,13 @@ import 'mavon-editor/dist/css/index.css'
 //         hljs.highlightBlock(block)
 //     })
 // })
+
 Vue.use(ElementUI)
 Vue.use(mavonEditor)
-
+Vue.use(Vuex)
 new Vue({
     el: '#app',
+    store,
     router,
     render: h => h(App)
 })

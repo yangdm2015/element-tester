@@ -6,7 +6,7 @@ const publicPath = ''
 
 const md = require('markdown-it')(); // 引入markdown-it
 const slugify = require('transliteration').slugify; // 引入transliteration中的slugify方法
-
+const config = require('./build/config');
 const striptags = require('./build/strip-tags'); // 引入刚刚的工具类
 /**
  * 由于cheerio在转换汉字时会出现转为Unicode的情况,所以我们编写convert方法来保证最终转码正确
@@ -160,7 +160,8 @@ module.exports = (options = {}) => ({
     ],
     resolve: {
         alias: {
-            '~': resolve(__dirname, 'src')
+            '~': resolve(__dirname, 'src'),
+            ...config.alias
         },
         extensions: ['.js', '.vue', '.json', '.css']
     },

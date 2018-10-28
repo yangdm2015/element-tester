@@ -15,6 +15,7 @@ import lo from "./components/listopt"
 import formRset from "./components/formRset"
 import propsTest from "./components/propsTest"
 import keyTest from "./components/keyTest"
+import vuexTest from "./components/vuexTest"
 
 
 import router from "./router.js"
@@ -25,9 +26,11 @@ const routes = [{
         path: "/table",
         component: table
     }, {
+
         path: "/cascader",
         component: cascaderWrapper
     }, {
+
         path: "/tree",
         component: tree
     }, {
@@ -52,8 +55,18 @@ const routes = [{
         path: "/propsTest",
         component: propsTest
     }, {
+        path: "/",
+        redirect: '/keyTest'
+    }, {
+        name: ":key测试",
+
         path: "/keyTest",
         component: keyTest
+    }, {
+        name: "vuex测试",
+
+        path: "/vuexTest",
+        component: vuexTest
     }
 
 
@@ -62,6 +75,12 @@ const routes = [{
 
 
 var Router = new VueRouter({
-    routes
+    routes,
+    mode: "history",
+    scrollBehavior(to, from, savedPosition) {
+        return { x: 0, y: 0 }
+        // return 期望滚动到哪个的位置
+    }
+
 })
 export default Router;

@@ -16,11 +16,6 @@
             <el-button @click="addo2a">
                 点我加o2 a
             </el-button>
-            {{haha}}
-            <el-date-picker v-model="haha"
-                            type="date"
-                            placeholder="选择日期">
-            </el-date-picker>
         </el-row>
     </div>
 </template>
@@ -48,8 +43,7 @@ export default {
                         }
                     }
                 ]
-            },
-            haha: 0
+            }
         };
     },
     computed: {

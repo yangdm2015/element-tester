@@ -49,7 +49,7 @@ export default {
                     }
                 ]
             },
-            haha: 0
+            haha: 1323
         };
     },
     computed: {

@@ -20,11 +20,12 @@
             <el-button @click="setCheckedKeys">通过 key 设置</el-button>
             <el-button @click="resetChecked">清空</el-button>
         </div> -->
-        haha = {{haha}}
-        <!-- <el-date-picker v-model="haha"
-                        type="date"
-                        placeholder="选择日期">
-        </el-date-picker> -->
+
+<el-date-picker
+      v-model="value1"
+      type="date"
+      placeholder="选择日期">
+    </el-date-picker>
     </div>
 </template>
 
@@ -34,12 +35,12 @@ export default {
     components: { father },
     data() {
         return {
-            // search: {
-            //     a: [],
-            //     b: '',
-            //     c: null
-            // },
-            haha: 1323
+            search: {
+                a: [],
+                b: '',
+                c: null
+            },
+            value1:null
         };
     },
     methods: {

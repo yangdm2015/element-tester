@@ -8,19 +8,11 @@
         </el-row>
         <el-row>
             <el-button @click="adda">
-                点我加o1 a
+                点我加a
             </el-button>
             <el-button @click="addb">
-                点我加o1 b
+                点我加b
             </el-button>
-            <el-button @click="addo2a">
-                点我加o2 a
-            </el-button>
-            {{haha}}
-            <el-date-picker v-model="haha"
-                            type="date"
-                            placeholder="选择日期">
-            </el-date-picker>
         </el-row>
     </div>
 </template>
@@ -38,18 +30,7 @@ export default {
                         }
                     }
                 ]
-            },
-            o2: {
-                v: [
-                    {
-                        ddd: {
-                            a: 6,
-                            b: 2
-                        }
-                    }
-                ]
-            },
-            haha: 0
+            }
         };
     },
     computed: {
@@ -60,20 +41,14 @@ export default {
     methods: {
         co(obj) {
             let t = { ...obj };
-            t.c = t.v[0].ddd.a + this.getO2c();
+            t.c = t.a + 1;
             return t;
         },
         adda() {
-            this.o1.v[0].ddd.a++;
+            this.o1.a++;
         },
         addb() {
-            this.o1.v[0].ddd.b++;
-        },
-        addo2a() {
-            this.o2.v[0].ddd.a++;
-        },
-        getO2c() {
-            return this.o2.v[0].ddd.a;
+            this.o1.b++;
         }
     }
 };

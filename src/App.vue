@@ -46,6 +46,11 @@
                 propsTest
             </router-link>
 
+            <router-link tag="span"
+                         to="/computedTest">
+                computedTest
+            </router-link>
+
         </div>
         <router-view></router-view>
     </div>

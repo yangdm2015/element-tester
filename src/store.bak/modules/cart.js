@@ -1,5 +1,6 @@
 const state = {
     items: [],
+    num: 1,
     checkoutStatus: null
 }
 
@@ -26,6 +27,9 @@ const getters = {
 
 // mutations
 const mutations = {
+    addNum(state) {
+        state.num++
+    },
     pushProductToCart(state, { id }) {
 
         state.items.push({

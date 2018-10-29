@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- {{localItems.map(i=>i.id)}} -->
         <el-collapse v-model="activeNames">
             <el-collapse-item title="商品列表"
                               :name="2">
@@ -24,12 +25,19 @@
                         </el-card>
                     </el-col>
                     <el-col :span="8">
-                        <span v-for="(i,index) in items"
-                              :key="i.id+index">{{i.title}}</span>
-                        {{localItems.map(i=>i.id)}}
-                        {{cartProducts}}
-                        {{curCartPList}}
+                        <!-- {{products}} -->
+                        <!-- <span v-for="(i,index) in items"
+                              :key="i.id+index">{{i.title}}</span> -->
+                        <!-- {{localItems.map(i=>i.id)}} -->
+
+                        <el-button @click="minusPrice">减价</el-button>
                         <el-button @click="consoleItems">打印items</el-button>
+                        <el-button @click="cartPList.push(1)">curCartPList push</el-button>
+
+                        <!-- {{num}}  -->
+                        localNum = {{localNum}}
+                        <el-button @click="$store.commit('addNum')">addNum</el-button>
+
                     </el-col>
                 </el-row>
 
@@ -41,7 +49,7 @@
 </template>
 
 <script>
-import store from '../../store';
+// import store from '../../store';
 import _ from 'lodash';
 import { mapState, mapMutations, mapGetters } from 'vuex';
 import { productList } from './productInfo';
@@ -59,28 +67,46 @@ export default {
         };
     },
     created() {
-        this.$store.commit('setProducts', productList);
+        // this.$store.commit('setProducts', productList);
     },
-    computed: {
-        ...mapGetters(['cartProducts']),
-        localItems() {
-            return store.state.cart.items;
-        },
-        ...mapState({
-            items: state => state.cart.items
-        }),
-        curCartPList() {
-            return this.cartPList;
+    watch: {
+        items: {
+            handler(v) {
+                console.log('items changed', v);
+            },
+            deep: true
         }
     },
+    computed: {
+        products() {
+            // return this.$store.state.products;
+        },
+        // ...mapGetters(['cartProducts']),
+        // localItems() {
+        //     return store.state.cart.items;
+        // },
+        localNum() {
+            return this.$store.state.cart.num;
+        }
+        // ...mapState({
+        //     items: state => state.cart.items,
+        //     num: state => state.cart.num
+        // }),
+        // curCartPList() {
+        //     return this.cartPList;
+        // }
+    },
     methods: {
+        minusPrice() {
+            this.$store.commit('minusPrice', 2);
+        },
         consoleItems() {
             console.log('this.items = ', this.items);
         },
-        // ...mapMutations(['pushProductToCart'])
+        // ...mapMutations(['addNum']),
         pushProductToCart(o) {
             // this.cartPList.push(o);
-            this.$store.commit('pushProductToCart', o);
+            // this.$store.commit('pushProductToCart', o);
         }
     },
     components: {}

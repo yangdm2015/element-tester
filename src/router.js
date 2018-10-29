@@ -1,4 +1,5 @@
-import Vue from 'vue/dist/vue.runtime.common.js'
+import Vue from 'vue'
+// import Vue from 'vue/dist/vue.runtime.common.js'
 // import Vue from 'vue/src/core/instance/index.js'
 
 import VueRouter from "vue-router";

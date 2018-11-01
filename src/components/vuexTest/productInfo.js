@@ -3,7 +3,7 @@ export const productList = [{
         id: 'hamburger',
         discription: '好吃的汉堡',
         title: '汉堡',
-        price: 10,
+        price: 11.00,
         inventory: 2
     },
     {
@@ -11,7 +11,7 @@ export const productList = [{
         id: 'jiroujuan',
         discription: '鸡肉卷',
         title: '鸡肉卷',
-        price: 10,
+        price: 9.99,
         inventory: 5
     },
     {
@@ -19,7 +19,7 @@ export const productList = [{
         id: 'jitui',
         discription: '鸡腿',
         title: '鸡腿',
-        price: 10,
+        price: 7.99,
         inventory: 12
     },
     {
@@ -27,7 +27,7 @@ export const productList = [{
         id: 'jikuai',
         discription: '鸡块',
         title: '鸡块',
-        price: 10,
+        price: 8.50,
         inventory: 20
     },
     {
@@ -35,7 +35,7 @@ export const productList = [{
         id: 'shutiao',
         discription: '薯条',
         title: '薯条',
-        price: 10,
+        price: 11.50,
         inventory: 7
     }
 ]

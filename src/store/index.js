@@ -13,6 +13,7 @@ const store = new Vuex.Store({
         letter,
         products,
         cart
-    }
+    },
+    strict: true
 })
 export default store

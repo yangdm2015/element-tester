@@ -23,8 +23,12 @@ export default {
     methods: {
         changeName() {
             this.name = 'Jerry';
-            let sonName = this.$refs.son.getName();
-            console.log('sonName = ', sonName);
+            // let sonName = this.$refs.son.getName();
+            // console.log('sonName = ', sonName);
+            this.$nextTick(function() {
+                let sonName = this.$refs.son.getName();
+                console.log('sonName = ', sonName);
+            });
         }
     },
     watch: {

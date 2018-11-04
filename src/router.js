@@ -1,4 +1,5 @@
-import Vue from 'vue/dist/vue.runtime.common.js'
+import Vue from 'vue'
+// import Vue from 'vue/dist/vue.runtime.common.js'
 // import Vue from 'vue/src/core/instance/index.js'
 
 import VueRouter from "vue-router";
@@ -15,6 +16,8 @@ import lo from "./components/listopt"
 import formRset from "./components/formRset"
 import propsTest from "./components/propsTest"
 import computedTest from "./components/computedTest"
+import keyTest from "./components/keyTest"
+import vuexTest from "./components/vuexTest"
 
 
 import router from "./router.js"
@@ -24,12 +27,12 @@ Vue.use(VueRouter);
 const routes = [{
         path: "/table",
         component: table
-    },
-    {
+    }, {
+
         path: "/cascader",
         component: cascaderWrapper
-    },
-    {
+    }, {
+
         path: "/tree",
         component: tree
     }, {
@@ -54,13 +57,32 @@ const routes = [{
         path: "/propsTest",
         component: propsTest
     }, {
-        path: "/computedTest",
-        component: computedTest
+        path: "/",
+        redirect: '/keyTest'
+    }, {
+        name: ":key测试",
+
+        path: "/keyTest",
+        component: keyTest
+    }, {
+        name: "vuex测试",
+
+        path: "/vuexTest",
+        component: vuexTest
     }
+
+
+
 ]
 
 
 var Router = new VueRouter({
-    routes
+    routes,
+    mode: "history",
+    scrollBehavior(to, from, savedPosition) {
+        return { x: 0, y: 0 }
+        // return 期望滚动到哪个的位置
+    }
+
 })
 export default Router;

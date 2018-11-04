@@ -3,6 +3,9 @@
         <father>
 
         </father>
+        11234567890
+        1234567890
+
         <!-- <el-tree :data="data2"
                  show-checkbox
                  default-expand-all
